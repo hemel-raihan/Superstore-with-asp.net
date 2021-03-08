@@ -28,8 +28,8 @@ namespace Ch24ShoppingCartMVC.Controllers {
                 //ASSIGN products to temp data called products
                 TempData["products"] = products;
                 //Redirect to the action method Index of the Order controller with id parameter.
-                // return RedirectToAction("Index", "Order", new { id });
-                return RedirectToAction("Index", id);
+                
+                return RedirectToAction("Index",  new { id } );
             }
             else { //get selected product and return in view method
                 //Call the method GetOrderInfo to get an OrderViewModel object called model

@@ -13,10 +13,10 @@ namespace Ch24ShoppingCartMVC.Models.DataAccess
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HallowenEntities : DbContext
+    public partial class HalowenEntities : DbContext
     {
-        public HallowenEntities()
-            : base("name=HallowenEntities")
+        public HalowenEntities()
+            : base("name=HalowenEntities")
         {
         }
     

@@ -18,10 +18,11 @@ namespace Ch24ShoppingCartMVC.Models {
         //Implement GetAllProductsFromDataStore
         public List<Product> GetAllProductsFromDataStore()
         {    
-            using (HallowenEntities data = new HallowenEntities())
+            using (HalowenEntities data = new HalowenEntities())
             {  //get all the products from the Collection Products order by name using HalloweenEntities
 
-                return (data.Products.ToList());
+              return (data.Products.ToList());
+              
             }
         }
         //Implement the method ConvertToViewModel
@@ -60,7 +61,7 @@ namespace Ch24ShoppingCartMVC.Models {
         
         public Product GetProductByIdFromDataStore(string id)
         {
-            using (HallowenEntities data = new HallowenEntities())
+            using (HalowenEntities data = new HalowenEntities())
             {  //Get a product from Products of data where ProductID is matched with id parameter
                 return data.Products.Where(product => product.ProductID == id).FirstOrDefault();
             }
@@ -79,13 +80,10 @@ namespace Ch24ShoppingCartMVC.Models {
                 return ConvertToViewModel(GetProductByIdFromDataStore(id));
             else
                 //Get the product from the products where ProductID is matched with id (Using Lambda expression)
-                return products.Where(p => p.ProductID == id).FirstOrDefault();
+                return products.Where(product => product.ProductID == id).FirstOrDefault();
         }
               
-        
-        
-        
-        
+   
         
     }
 }
